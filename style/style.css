@@ -1,0 +1,79 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100vh;
+}
+
+main {
+  height: 100vh;
+  background-color: #161722;
+  background-image: url(/images/bg-desktop-dark.jpg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+main .container {
+  height: 100%;
+  width: 30%;
+  max-width: 1440px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+main .container .title {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  color: #cacde8;
+  font-size: 2rem;
+  letter-spacing: 10px;
+  text-transform: uppercase;
+}
+
+main .container .title img {
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}
+
+main .container .new-todo {
+  width: 100%;
+  height: 55px;
+  background-color: #25273c;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+main .container .new-todo div {
+  border-radius: 50%;
+  border: 1px solid #cacde8;
+  width: 25px;
+  height: 25px;
+  display: inline-block;
+  margin-left: 15px;
+}
+
+main .container .new-todo input {
+  width: 90%;
+  height: 100%;
+  background-color: #25273c;
+  color: #cacde8;
+  font-size: 18px;
+  outline: none;
+  border: none;
+}
+/*# sourceMappingURL=style.css.map */

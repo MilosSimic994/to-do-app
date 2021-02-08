@@ -1,0 +1,81 @@
+$BrightBlue: hsl(220, 98%, 61%);
+// $CheckBackground: linear-gradient hsl(192, 100%, 67%) to hsl(280, 87%, 65%);
+
+$VeryDarkBlue: hsl(235, 21%, 11%);
+$VeryDarkDesaturatedBlue: hsl(235, 24%, 19%);
+$LightGrayishBlue: hsl(234, 39%, 85%);
+$LightGrayishBlueHover: hsl(236, 33%, 92%);
+$DarkGrayishBlue: hsl(234, 11%, 52%);
+$VeryDarkGrayishBlue: hsl(233, 14%, 35%);
+$VeryDarkGrayishBlue: hsl(237, 14%, 26%);
+
+// MIXINS
+
+@mixin flex($direction, $justify, $align) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  height: 100vh;
+}
+main {
+  height: 100vh;
+  background-color: $VeryDarkBlue;
+  background-image: url(/images/bg-desktop-dark.jpg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  @include flex(column, center, center);
+
+  .container {
+    height: 100%;
+    width: 30%;
+    max-width: 1440px;
+    @include flex(column, space-around, center);
+
+    .title {
+      width: 100%;
+      @include flex(row, space-between, center);
+      color: $LightGrayishBlue;
+      font-size: 2rem;
+      letter-spacing: 10px;
+      text-transform: uppercase;
+      img {
+        width: 40px;
+        height: 40px;
+        cursor: pointer;
+      }
+    }
+
+    .new-todo {
+      width: 100%;
+      height: 55px;
+      background-color: $VeryDarkDesaturatedBlue;
+      @include flex(row, space-between, center);
+      div {
+        border-radius: 50%;
+        border: 1px solid $LightGrayishBlue;
+        width: 25px;
+        height: 25px;
+        display: inline-block;
+        margin-left: 15px;
+      }
+      input {
+        width: 90%;
+        height: 100%;
+        background-color: $VeryDarkDesaturatedBlue;
+        color: $LightGrayishBlue;
+        font-size: 18px;
+        outline: none;
+        border: none;
+      }
+    }
+  }
+}
