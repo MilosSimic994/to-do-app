@@ -4,6 +4,16 @@
   padding: 0;
 }
 
+.o {
+  border-radius: 50%;
+  border: 1px solid #393a4c;
+  width: 25px;
+  height: 25px;
+  display: inline-block;
+  margin-left: 15px;
+  cursor: pointer;
+}
+
 body {
   height: 100vh;
 }
@@ -21,7 +31,8 @@ main {
 }
 
 main .container {
-  height: 100%;
+  height: 60%;
+  min-height: 60%;
   width: 30%;
   max-width: 1440px;
   display: flex;
@@ -58,15 +69,6 @@ main .container .new-todo {
   align-items: center;
 }
 
-main .container .new-todo div {
-  border-radius: 50%;
-  border: 1px solid #cacde8;
-  width: 25px;
-  height: 25px;
-  display: inline-block;
-  margin-left: 15px;
-}
-
 main .container .new-todo input {
   width: 90%;
   height: 100%;
@@ -75,5 +77,76 @@ main .container .new-todo input {
   font-size: 18px;
   outline: none;
   border: none;
+}
+
+main .container .list {
+  background: #25273c;
+  width: 100%;
+  min-height: 50%;
+  font-size: 18px;
+  color: #cacde8;
+  position: relative;
+}
+
+main .container .list ul {
+  list-style-type: none;
+}
+
+main .container .list ul li {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 20px 0;
+  border-bottom: 1px solid #393a4c;
+  position: relative;
+}
+
+main .container .list ul li div {
+  margin-right: 20px;
+}
+
+main .container .list ul li .del {
+  position: absolute;
+  right: 20px;
+}
+
+main .container .list ul li .check {
+  background-image: url(/images/icon-check.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+main .container .list ul .decoration {
+  text-decoration: line-through;
+}
+
+main .container nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0 10px;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+}
+
+main .container nav ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: 40%;
+}
+
+main .container nav ul li {
+  border: none;
+}
+
+main .container nav ul li a {
+  color: #777a92;
+  text-decoration: none;
+  font-size: 12px;
 }
 /*# sourceMappingURL=style.css.map */
