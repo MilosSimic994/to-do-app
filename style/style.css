@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap");
 * {
   box-sizing: border-box;
   margin: 0;
@@ -16,6 +17,7 @@
 
 body {
   height: 100vh;
+  font-family: "Josefin Sans", sans-serif;
 }
 
 main {
@@ -32,7 +34,7 @@ main {
 
 main .container {
   height: 60%;
-  min-height: 60%;
+  min-height: 80%;
   width: 30%;
   max-width: 1440px;
   display: flex;
@@ -82,10 +84,12 @@ main .container .new-todo input {
 main .container .list {
   background: #25273c;
   width: 100%;
-  min-height: 50%;
+  min-height: 70%;
   font-size: 18px;
   color: #cacde8;
   position: relative;
+  overflow-y: auto;
+  margin-bottom: 30px;
 }
 
 main .container .list ul {
@@ -100,6 +104,8 @@ main .container .list ul li {
   padding: 20px 0;
   border-bottom: 1px solid #393a4c;
   position: relative;
+  font-size: 22px;
+  letter-spacing: 1px;
 }
 
 main .container .list ul li div {
@@ -107,18 +113,29 @@ main .container .list ul li div {
 }
 
 main .container .list ul li .del {
+  visibility: hidden;
   position: absolute;
   right: 20px;
+  cursor: pointer;
+}
+
+main .container .list ul li .showCross {
+  visibility: visible;
 }
 
 main .container .list ul li .check {
-  background-image: url(/images/icon-check.svg);
+  background-image: linear-gradient(rgba(87, 221, 255, 0.418), rgba(192, 88, 243, 0.383)), url(/images/icon-check.svg);
   background-repeat: no-repeat;
-  background-size: cover;
+  background-position: center;
+}
+
+main .container .list ul li .border-decoration {
+  border: 1px solid red;
 }
 
 main .container .list ul .decoration {
   text-decoration: line-through;
+  color: #777a92;
 }
 
 main .container nav {
@@ -126,10 +143,11 @@ main .container nav {
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
-  padding: 0 10px;
+  padding: 20px 10px;
   width: 100%;
   position: absolute;
   bottom: 0;
+  color: #777a92;
 }
 
 main .container nav ul {
@@ -140,13 +158,25 @@ main .container nav ul {
   width: 40%;
 }
 
-main .container nav ul li {
-  border: none;
-}
-
-main .container nav ul li a {
+main .container nav ul a {
   color: #777a92;
   text-decoration: none;
   font-size: 12px;
+}
+
+main .container nav ul a:hover {
+  color: #e4e5f1;
+}
+
+main .container nav ul .active {
+  color: #3a7bfd;
+}
+
+main .container nav h5 {
+  cursor: pointer;
+}
+
+main .container nav h5:hover {
+  color: #e4e5f1;
 }
 /*# sourceMappingURL=style.css.map */

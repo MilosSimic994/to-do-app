@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap");
+
 $BrightBlue: hsl(220, 98%, 61%);
 // $CheckBackground: linear-gradient hsl(192, 100%, 67%) to hsl(280, 87%, 65%);
 
@@ -37,6 +39,7 @@ $font: 18px;
 }
 body {
   height: 100vh;
+  font-family: "Josefin Sans", sans-serif;
 }
 main {
   height: 100vh;
@@ -48,7 +51,7 @@ main {
 
   .container {
     height: 60%;
-    min-height: 60%;
+    min-height: 80%;
     width: 30%;
     max-width: 1440px;
     @include flex(column, space-around, center);
@@ -86,10 +89,12 @@ main {
     .list {
       background: $VeryDarkDesaturatedBlue;
       width: 100%;
-      min-height: 50%;
+      min-height: 70%;
       font-size: $font;
       color: $LightGrayishBlue;
       position: relative;
+      overflow-y: auto;
+      margin-bottom: 30px;
       ul {
         list-style-type: none;
 
@@ -98,43 +103,70 @@ main {
           padding: 20px 0;
           border-bottom: 1px solid $VeryDarkGrayishBlue;
           position: relative;
+          font-size: 22px;
+          letter-spacing: 1px;
           div {
             margin-right: 20px;
           }
           .del {
+            visibility: hidden;
             position: absolute;
             right: 20px;
+            cursor: pointer;
+          }
+
+          .showCross {
+            visibility: visible;
           }
 
           .check {
-            background-image: url(/images/icon-check.svg);
+            background-image: linear-gradient(
+                hsla(192, 100%, 67%, 0.418),
+                hsla(280, 87%, 65%, 0.383)
+              ),
+              url(/images/icon-check.svg);
+
             background-repeat: no-repeat;
-            background-size: cover;
+            background-position: center;
+          }
+          .border-decoration {
+            border: 1px solid red;
           }
         }
         .decoration {
           text-decoration: line-through;
+          color: $DarkGrayishBlue;
         }
       }
     }
 
     nav {
       @include flex(row, space-around, center);
-      padding: 0 10px;
+      padding: 20px 10px;
       width: 100%;
       position: absolute;
       bottom: 0;
+      color: $DarkGrayishBlue;
       ul {
         @include flex(row, space-around, center);
         width: 40%;
-        li {
-          border: none;
 
-          a {
-            color: $DarkGrayishBlue;
-            text-decoration: none;
-            font-size: 12px;
+        a {
+          color: $DarkGrayishBlue;
+          text-decoration: none;
+          font-size: 12px;
+          &:hover {
+            color: $LightGrayishBlueHover;
           }
+        }
+        .active {
+          color: $BrightBlue;
+        }
+      }
+      h5 {
+        cursor: pointer;
+        &:hover {
+          color: $LightGrayishBlueHover;
         }
       }
     }
