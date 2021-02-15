@@ -147,7 +147,6 @@ main .container .list ul .decoration {
 }
 
 main .container .list ul .light-decoration {
-  text-decoration: line-through;
   color: #cacde8;
 }
 

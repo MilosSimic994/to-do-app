@@ -54,21 +54,11 @@ function showItemLeft() {
 //check completed
 function checkCompleted(e) {
     const element = e.target.parentElement
-    if(element.dataset.completed !== 'completed' && form.classList.contains('light-theme')) {
-        element.dataset.completed = 'completed'
-        e.target.classList.toggle('check');
-        element.classList.toggle('light-decoration')
-    } else if(element.dataset.completed !== 'completed' && !form.classList.contains('light-theme')){
+    if(element.dataset.completed !== 'completed') {
         element.dataset.completed = 'completed'
         e.target.classList.toggle('check');
         element.classList.toggle('decoration')
-        
-    } else if(element.dataset.completed === 'completed' && form.classList.contains('light-theme')){
-        element.dataset.completed = 'completed'
-        e.target.classList.toggle('check');
-        element.classList.toggle('light-decoration')
-        
-    } else {
+    }  else {
         element.dataset.completed = ''
         e.target.classList.toggle('check');
         element.classList.toggle('decoration')
@@ -145,19 +135,35 @@ clear.addEventListener('click', () => {
 changeTheme.addEventListener('click', ()=> {
     const main = document.querySelector('main')
     const listContainer = document.querySelector('.list')
-    const listLi = listContainer.querySelector('ul li')
+    const listLi = listContainer.querySelectorAll('ul li')
     const nav = main.querySelector('.container nav')
 
- 
-    
-
     main.classList.toggle('main-light')
-
     listContainer.classList.toggle('light-theme')
     
     nav.classList.toggle('light-theme')
     form.classList.toggle('light-theme')
     newToDo.classList.toggle('light-theme')
+
+    listLi.forEach(item => {
+        if(item && item.dataset.completed === 'completed') {
+            item.classList.add('light-decoration')
+        } else {
+            item.classList.remove('light-decoration')
+        }
+    })
+    // if(listLi && listLi.dataset.completed === 'completed') {
+    //     listLi.classList.toggle('light-decoration')
+    // }
+    if(main.classList.contains('main-light')) {
+        changeTheme.src = '/images/icon-moon.svg'
+        nav.style.color = 'hsl(234, 39%, 85%)'
+    } else {
+        changeTheme.src = '/images/icon-sun.svg'
+    }
+   
+    
+    console.log(listLi);
 
     
 })
