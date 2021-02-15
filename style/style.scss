@@ -9,7 +9,7 @@ $LightGrayishBlue: hsl(234, 39%, 85%);
 $LightGrayishBlueHover: hsl(236, 33%, 92%);
 $DarkGrayishBlue: hsl(234, 11%, 52%);
 $VeryDarkGrayishBlue: hsl(233, 14%, 35%);
-$VeryDarkGrayishBlue: hsl(237, 14%, 26%);
+$VeryDarkGrayishBlueHover: hsl(237, 14%, 26%);
 
 $font: 18px;
 
@@ -79,11 +79,16 @@ main {
       input {
         width: 90%;
         height: 100%;
+        padding-left: 10px;
         background-color: $VeryDarkDesaturatedBlue;
         color: $LightGrayishBlue;
         font-size: 18px;
         outline: none;
         border: none;
+      }
+      .light-theme {
+        background-color: #fff;
+        color: $VeryDarkGrayishBlue;
       }
     }
     .list {
@@ -120,22 +125,28 @@ main {
           }
 
           .check {
+            background-color: hsla(192, 100%, 67%, 0.39);
             background-image: linear-gradient(
-                hsla(192, 100%, 67%, 0.418),
-                hsla(280, 87%, 65%, 0.383)
+                hsla(192, 100%, 67%, 0.383),
+                hsla(280, 87%, 65%, 0.329)
               ),
               url(/images/icon-check.svg);
 
             background-repeat: no-repeat;
             background-position: center;
+            background-blend-mode: hard-light;
           }
           .border-decoration {
-            border: 1px solid red;
+            border: 1px solid;
           }
         }
         .decoration {
           text-decoration: line-through;
           color: $DarkGrayishBlue;
+        }
+        .light-decoration {
+          text-decoration: line-through;
+          color: $LightGrayishBlue;
         }
       }
     }
@@ -170,5 +181,14 @@ main {
         }
       }
     }
+
+    .light-theme {
+      background-color: #fff;
+      color: $VeryDarkGrayishBlue;
+    }
   }
+}
+.main-light {
+  background-image: url(/images/bg-desktop-light.jpg);
+  background-color: $LightGrayishBlue;
 }

@@ -7,7 +7,7 @@
 
 .o {
   border-radius: 50%;
-  border: 1px solid #393a4c;
+  border: 1px solid #4d5066;
   width: 25px;
   height: 25px;
   display: inline-block;
@@ -74,11 +74,17 @@ main .container .new-todo {
 main .container .new-todo input {
   width: 90%;
   height: 100%;
+  padding-left: 10px;
   background-color: #25273c;
   color: #cacde8;
   font-size: 18px;
   outline: none;
   border: none;
+}
+
+main .container .new-todo .light-theme {
+  background-color: #fff;
+  color: #4d5066;
 }
 
 main .container .list {
@@ -102,7 +108,7 @@ main .container .list ul li {
   justify-content: flex-start;
   align-items: center;
   padding: 20px 0;
-  border-bottom: 1px solid #393a4c;
+  border-bottom: 1px solid #4d5066;
   position: relative;
   font-size: 22px;
   letter-spacing: 1px;
@@ -124,18 +130,25 @@ main .container .list ul li .showCross {
 }
 
 main .container .list ul li .check {
-  background-image: linear-gradient(rgba(87, 221, 255, 0.418), rgba(192, 88, 243, 0.383)), url(/images/icon-check.svg);
+  background-color: rgba(87, 221, 255, 0.39);
+  background-image: linear-gradient(rgba(87, 221, 255, 0.383), rgba(192, 88, 243, 0.329)), url(/images/icon-check.svg);
   background-repeat: no-repeat;
   background-position: center;
+  background-blend-mode: hard-light;
 }
 
 main .container .list ul li .border-decoration {
-  border: 1px solid red;
+  border: 1px solid;
 }
 
 main .container .list ul .decoration {
   text-decoration: line-through;
   color: #777a92;
+}
+
+main .container .list ul .light-decoration {
+  text-decoration: line-through;
+  color: #cacde8;
 }
 
 main .container nav {
@@ -178,5 +191,15 @@ main .container nav h5 {
 
 main .container nav h5:hover {
   color: #e4e5f1;
+}
+
+main .container .light-theme {
+  background-color: #fff;
+  color: #4d5066;
+}
+
+.main-light {
+  background-image: url(/images/bg-desktop-light.jpg);
+  background-color: #cacde8;
 }
 /*# sourceMappingURL=style.css.map */

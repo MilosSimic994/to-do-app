@@ -5,6 +5,7 @@ const clear = document.querySelector('.clear')
 const active = document.getElementById('active')
 const completed = document.getElementById('completed')
 const all = document.getElementById('all')
+const changeTheme = document.getElementById('change')
 
 const todos = [];
 
@@ -53,9 +54,28 @@ function showItemLeft() {
 //check completed
 function checkCompleted(e) {
     const element = e.target.parentElement
-    element.dataset.completed = 'completed'
-    e.target.classList.toggle('check');
-    element.classList.toggle('decoration')
+    if(element.dataset.completed !== 'completed' && form.classList.contains('light-theme')) {
+        element.dataset.completed = 'completed'
+        e.target.classList.toggle('check');
+        element.classList.toggle('light-decoration')
+    } else if(element.dataset.completed !== 'completed' && !form.classList.contains('light-theme')){
+        element.dataset.completed = 'completed'
+        e.target.classList.toggle('check');
+        element.classList.toggle('decoration')
+        
+    } else if(element.dataset.completed === 'completed' && form.classList.contains('light-theme')){
+        element.dataset.completed = 'completed'
+        e.target.classList.toggle('check');
+        element.classList.toggle('light-decoration')
+        
+    } else {
+        element.dataset.completed = ''
+        e.target.classList.toggle('check');
+        element.classList.toggle('decoration')
+        
+    }
+    
+   console.log(element);
 }
 // delete item
 function deleteItem(e) {
@@ -121,8 +141,29 @@ clear.addEventListener('click', () => {
     showItemLeft()
 })
 
+// /light theme
+changeTheme.addEventListener('click', ()=> {
+    const main = document.querySelector('main')
+    const listContainer = document.querySelector('.list')
+    const listLi = listContainer.querySelector('ul li')
+    const nav = main.querySelector('.container nav')
+
+ 
+    
+
+    main.classList.toggle('main-light')
+
+    listContainer.classList.toggle('light-theme')
+    
+    nav.classList.toggle('light-theme')
+    form.classList.toggle('light-theme')
+    newToDo.classList.toggle('light-theme')
+
+    
+})
+
 active.addEventListener('click', showActiveItems)
 completed.addEventListener('click', showCompletedItems)
 all.addEventListener('click', showAllItems)
 
-//completed treba resiti ostaje i kad se odstiklira
+//check-completed treba resiti napraviti bolje if uslove
