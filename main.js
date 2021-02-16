@@ -54,14 +54,20 @@ function showItemLeft() {
 //check completed
 function checkCompleted(e) {
     const element = e.target.parentElement
-    if(element.dataset.completed !== 'completed') {
+    if(element.dataset.completed !== 'completed'  && form.classList.contains('light-theme')) {
+        element.dataset.completed = 'completed'
+        e.target.classList.toggle('check');
+        element.classList.toggle('light-decoration')
+    } else if(element.dataset.completed !== 'completed' && !form.classList.contains('light-theme')) {
         element.dataset.completed = 'completed'
         e.target.classList.toggle('check');
         element.classList.toggle('decoration')
-    }  else {
+    }
+      else if (element.dataset.completed === 'completed'){
         element.dataset.completed = ''
         e.target.classList.toggle('check');
-        element.classList.toggle('decoration')
+        element.classList.remove('decoration')
+        element.classList.remove('light-decoration')
         
     }
     
@@ -146,10 +152,13 @@ changeTheme.addEventListener('click', ()=> {
     newToDo.classList.toggle('light-theme')
 
     listLi.forEach(item => {
-        if(item && item.dataset.completed === 'completed') {
+        if(item && item.dataset.completed === 'completed' && listContainer.classList.contains('light-theme')) {
             item.classList.add('light-decoration')
+        } else if (item && item.dataset.completed === 'completed'  && !listContainer.classList.contains('light-theme')){
+            item.classList.add('decoration')
         } else {
-            item.classList.remove('light-decoration')
+            item.classList.remove('ligh-decoration')
+            item.classList.remove('decoration')
         }
     })
     // if(listLi && listLi.dataset.completed === 'completed') {

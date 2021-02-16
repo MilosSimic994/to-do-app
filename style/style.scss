@@ -22,6 +22,12 @@ $font: 18px;
   align-items: $align;
 }
 
+@mixin mob {
+  @media screen and(max-width: 375px) {
+    @content;
+  }
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -48,13 +54,19 @@ main {
   background-repeat: no-repeat;
   background-size: contain;
   @include flex(column, center, center);
+  @include mob {
+    background-image: url(/images/bg-mobile-dark.jpg);
+  }
 
   .container {
-    height: 60%;
+    height: 70%;
     min-height: 80%;
     width: 30%;
     max-width: 1440px;
     @include flex(column, space-around, center);
+    @include mob {
+      width: 80%;
+    }
 
     .title {
       width: 100%;
@@ -63,10 +75,18 @@ main {
       font-size: 2rem;
       letter-spacing: 10px;
       text-transform: uppercase;
+      @include mob {
+        font-size: 1.1rem;
+        padding-bottom: 20px;
+      }
       img {
         width: 40px;
         height: 40px;
         cursor: pointer;
+        @include mob {
+          width: 25px;
+          height: 25px;
+        }
       }
     }
 
@@ -85,6 +105,9 @@ main {
         font-size: 18px;
         outline: none;
         border: none;
+        @include mob {
+          font-size: 16px;
+        }
       }
       .light-theme {
         background-color: #fff;
@@ -100,6 +123,9 @@ main {
       position: relative;
       overflow-y: auto;
       margin-bottom: 30px;
+      @include mob {
+        min-height: 60%;
+      }
       ul {
         list-style-type: none;
 
@@ -110,6 +136,9 @@ main {
           position: relative;
           font-size: 22px;
           letter-spacing: 1px;
+          @include mob {
+            font-size: 16px;
+          }
           div {
             margin-right: 20px;
           }
@@ -146,6 +175,7 @@ main {
         }
         .light-decoration {
           color: $LightGrayishBlue;
+          text-decoration: line-through;
         }
       }
     }
@@ -160,7 +190,9 @@ main {
       ul {
         @include flex(row, space-around, center);
         width: 40%;
-
+        @include mob {
+          transform: translateY(100px);
+        }
         a {
           color: $DarkGrayishBlue;
           text-decoration: none;
@@ -184,10 +216,32 @@ main {
     .light-theme {
       background-color: #fff;
       color: $VeryDarkGrayishBlue;
+
+      nav {
+        ul {
+          a {
+            color: $LightGrayishBlue;
+            &:hover {
+              color: $VeryDarkGrayishBlue;
+            }
+          }
+          .active {
+            color: $BrightBlue;
+          }
+        }
+        h5 {
+          &:hover {
+            color: $VeryDarkGrayishBlue;
+          }
+        }
+      }
     }
   }
 }
 .main-light {
   background-image: url(/images/bg-desktop-light.jpg);
   background-color: $LightGrayishBlue;
+  @include mob {
+    background-image: url(/images/bg-mobile-light.jpg);
+  }
 }

@@ -32,8 +32,14 @@ main {
   align-items: center;
 }
 
+@media screen and (max-width: 375px) {
+  main {
+    background-image: url(/images/bg-mobile-dark.jpg);
+  }
+}
+
 main .container {
-  height: 60%;
+  height: 70%;
   min-height: 80%;
   width: 30%;
   max-width: 1440px;
@@ -41,6 +47,12 @@ main .container {
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+}
+
+@media screen and (max-width: 375px) {
+  main .container {
+    width: 80%;
+  }
 }
 
 main .container .title {
@@ -55,10 +67,24 @@ main .container .title {
   text-transform: uppercase;
 }
 
+@media screen and (max-width: 375px) {
+  main .container .title {
+    font-size: 1.1rem;
+    padding-bottom: 20px;
+  }
+}
+
 main .container .title img {
   width: 40px;
   height: 40px;
   cursor: pointer;
+}
+
+@media screen and (max-width: 375px) {
+  main .container .title img {
+    width: 25px;
+    height: 25px;
+  }
 }
 
 main .container .new-todo {
@@ -82,6 +108,12 @@ main .container .new-todo input {
   border: none;
 }
 
+@media screen and (max-width: 375px) {
+  main .container .new-todo input {
+    font-size: 16px;
+  }
+}
+
 main .container .new-todo .light-theme {
   background-color: #fff;
   color: #4d5066;
@@ -98,6 +130,12 @@ main .container .list {
   margin-bottom: 30px;
 }
 
+@media screen and (max-width: 375px) {
+  main .container .list {
+    min-height: 60%;
+  }
+}
+
 main .container .list ul {
   list-style-type: none;
 }
@@ -112,6 +150,12 @@ main .container .list ul li {
   position: relative;
   font-size: 22px;
   letter-spacing: 1px;
+}
+
+@media screen and (max-width: 375px) {
+  main .container .list ul li {
+    font-size: 16px;
+  }
 }
 
 main .container .list ul li div {
@@ -148,6 +192,7 @@ main .container .list ul .decoration {
 
 main .container .list ul .light-decoration {
   color: #cacde8;
+  text-decoration: line-through;
 }
 
 main .container nav {
@@ -168,6 +213,12 @@ main .container nav ul {
   justify-content: space-around;
   align-items: center;
   width: 40%;
+}
+
+@media screen and (max-width: 375px) {
+  main .container nav ul {
+    transform: translateY(100px);
+  }
 }
 
 main .container nav ul a {
@@ -197,8 +248,30 @@ main .container .light-theme {
   color: #4d5066;
 }
 
+main .container .light-theme nav ul a {
+  color: #cacde8;
+}
+
+main .container .light-theme nav ul a:hover {
+  color: #4d5066;
+}
+
+main .container .light-theme nav ul .active {
+  color: #3a7bfd;
+}
+
+main .container .light-theme nav h5:hover {
+  color: #4d5066;
+}
+
 .main-light {
   background-image: url(/images/bg-desktop-light.jpg);
   background-color: #cacde8;
+}
+
+@media screen and (max-width: 375px) {
+  .main-light {
+    background-image: url(/images/bg-mobile-light.jpg);
+  }
 }
 /*# sourceMappingURL=style.css.map */
