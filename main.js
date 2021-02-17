@@ -165,6 +165,7 @@ changeTheme.addEventListener("click", () => {
       item.dataset.completed === "completed" &&
       !listContainer.classList.contains("light-theme")
     ) {
+      item.classList.remove("light-decoration");
       item.classList.add("decoration");
     } else {
       item.classList.remove("ligh-decoration");
