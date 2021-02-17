@@ -70,7 +70,6 @@ main .container .title {
 @media screen and (max-width: 375px) {
   main .container .title {
     font-size: 1.1rem;
-    padding-bottom: 20px;
   }
 }
 
@@ -128,6 +127,10 @@ main .container .list {
   position: relative;
   overflow-y: auto;
   margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
 }
 
 @media screen and (max-width: 375px) {
@@ -138,6 +141,7 @@ main .container .list {
 
 main .container .list ul {
   list-style-type: none;
+  width: 100%;
 }
 
 main .container .list ul li {
@@ -155,6 +159,7 @@ main .container .list ul li {
 @media screen and (max-width: 375px) {
   main .container .list ul li {
     font-size: 16px;
+    padding: 10px 0;
   }
 }
 
@@ -195,52 +200,78 @@ main .container .list ul .light-decoration {
   text-decoration: line-through;
 }
 
-main .container nav {
+main .container nav.misa {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
   padding: 20px 10px;
   width: 100%;
-  position: absolute;
-  bottom: 0;
+  position: relative;
   color: #777a92;
 }
 
-main .container nav ul {
+@media screen and (max-width: 375px) {
+  main .container nav.misa {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+  }
+}
+
+main .container nav.misa ul {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
-  width: 40%;
+  width: 20%;
+  flex: 0 0 50%;
 }
 
 @media screen and (max-width: 375px) {
-  main .container nav ul {
-    transform: translateY(100px);
+  main .container nav.misa ul {
+    position: fixed;
+    bottom: 40px;
+    background-color: #25273c;
+    width: 80%;
+    padding: 20px 10px;
   }
 }
 
-main .container nav ul a {
+main .container nav.misa ul a {
   color: #777a92;
   text-decoration: none;
   font-size: 12px;
 }
 
-main .container nav ul a:hover {
+main .container nav.misa ul a:hover {
   color: #e4e5f1;
 }
 
-main .container nav ul .active {
+main .container nav.misa ul .active {
   color: #3a7bfd;
 }
 
-main .container nav h5 {
+main .container nav.misa .light-theme {
+  background-color: #fff;
+  color: #4d5066;
+}
+
+main .container nav.misa h5 {
   cursor: pointer;
 }
 
-main .container nav h5:hover {
+main .container nav.misa h5:hover {
   color: #e4e5f1;
+}
+
+@media screen and (max-width: 375px) {
+  main .container nav.misa h5 {
+    font-size: 12px;
+    margin: 0 10px;
+  }
 }
 
 main .container .light-theme {

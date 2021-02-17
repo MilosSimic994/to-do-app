@@ -77,7 +77,6 @@ main {
       text-transform: uppercase;
       @include mob {
         font-size: 1.1rem;
-        padding-bottom: 20px;
       }
       img {
         width: 40px;
@@ -123,11 +122,13 @@ main {
       position: relative;
       overflow-y: auto;
       margin-bottom: 30px;
+      @include flex(column, space-between, flex-start);
       @include mob {
         min-height: 60%;
       }
       ul {
         list-style-type: none;
+        width: 100%;
 
         li {
           @include flex(row, flex-start, center);
@@ -138,6 +139,7 @@ main {
           letter-spacing: 1px;
           @include mob {
             font-size: 16px;
+            padding: 10px 0;
           }
           div {
             margin-right: 20px;
@@ -180,18 +182,27 @@ main {
       }
     }
 
-    nav {
+    nav.misa {
       @include flex(row, space-around, center);
       padding: 20px 10px;
       width: 100%;
-      position: absolute;
-      bottom: 0;
+      position: relative;
       color: $DarkGrayishBlue;
+      @include mob {
+        @include flex(row, space-between, center);
+        padding: 20px 0;
+      }
+
       ul {
         @include flex(row, space-around, center);
-        width: 40%;
+        width: 20%;
+        flex: 0 0 50%;
         @include mob {
-          transform: translateY(100px);
+          position: fixed;
+          bottom: 40px;
+          background-color: $VeryDarkDesaturatedBlue;
+          width: 80%;
+          padding: 20px 10px;
         }
         a {
           color: $DarkGrayishBlue;
@@ -205,10 +216,19 @@ main {
           color: $BrightBlue;
         }
       }
+      .light-theme {
+        background-color: #fff;
+        color: $VeryDarkGrayishBlue;
+      }
       h5 {
         cursor: pointer;
         &:hover {
           color: $LightGrayishBlueHover;
+        }
+
+        @include mob {
+          font-size: 12px;
+          margin: 0 10px;
         }
       }
     }
