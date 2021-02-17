@@ -260,6 +260,7 @@ main .container nav.misa .light-theme {
 }
 
 main .container nav.misa h5 {
+  color: #777a92;
   cursor: pointer;
 }
 
