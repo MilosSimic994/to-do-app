@@ -49,6 +49,18 @@ main .container {
   align-items: center;
 }
 
+@media screen and (max-width: 1375px) {
+  main .container {
+    width: 40%;
+  }
+}
+
+@media screen and (max-width: 1035px) {
+  main .container {
+    width: 50%;
+  }
+}
+
 @media screen and (max-width: 375px) {
   main .container {
     width: 80%;

@@ -22,6 +22,16 @@ $font: 18px;
   align-items: $align;
 }
 
+@mixin mDesk {
+  @media screen and(max-width: 1375px) {
+    @content;
+  }
+}
+@mixin tablet {
+  @media screen and(max-width: 1035px) {
+    @content;
+  }
+}
 @mixin mob {
   @media screen and(max-width: 375px) {
     @content;
@@ -64,6 +74,13 @@ main {
     width: 30%;
     max-width: 1440px;
     @include flex(column, space-around, center);
+
+    @include mDesk {
+      width: 40%;
+    }
+    @include tablet {
+      width: 50%;
+    }
     @include mob {
       width: 80%;
     }
