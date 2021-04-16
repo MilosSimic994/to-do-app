@@ -32,8 +32,13 @@ $font: 18px;
     @content;
   }
 }
+@mixin sTablet {
+  @media screen and(max-width: 820px) {
+    @content;
+  }
+}
 @mixin mob {
-  @media screen and(max-width: 375px) {
+  @media screen and(max-width: 480px) {
     @content;
   }
 }
@@ -81,6 +86,9 @@ main {
     @include tablet {
       width: 50%;
     }
+    @include sTablet {
+      width: 55%;
+    }
     @include mob {
       width: 80%;
     }
@@ -92,6 +100,9 @@ main {
       font-size: 2rem;
       letter-spacing: 10px;
       text-transform: uppercase;
+      @include tablet {
+        font-size: 1.5rem;
+      }
       @include mob {
         font-size: 1.1rem;
       }
@@ -214,12 +225,15 @@ main {
         @include flex(row, space-around, center);
         width: 20%;
         flex: 0 0 50%;
-        @include mob {
+        @include sTablet {
           position: fixed;
           bottom: 40px;
           background-color: $VeryDarkDesaturatedBlue;
-          width: 80%;
+          width: 55%;
           padding: 20px 10px;
+        }
+        @include mob {
+          width: 80%;
         }
         a {
           color: $DarkGrayishBlue;

@@ -32,7 +32,7 @@ main {
   align-items: center;
 }
 
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 480px) {
   main {
     background-image: url(/images/bg-mobile-dark.jpg);
   }
@@ -61,7 +61,13 @@ main .container {
   }
 }
 
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 820px) {
+  main .container {
+    width: 55%;
+  }
+}
+
+@media screen and (max-width: 480px) {
   main .container {
     width: 80%;
   }
@@ -79,7 +85,13 @@ main .container .title {
   text-transform: uppercase;
 }
 
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 1035px) {
+  main .container .title {
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
   main .container .title {
     font-size: 1.1rem;
   }
@@ -91,7 +103,7 @@ main .container .title img {
   cursor: pointer;
 }
 
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 480px) {
   main .container .title img {
     width: 25px;
     height: 25px;
@@ -119,7 +131,7 @@ main .container .new-todo input {
   border: none;
 }
 
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 480px) {
   main .container .new-todo input {
     font-size: 16px;
   }
@@ -145,7 +157,7 @@ main .container .list {
   align-items: flex-start;
 }
 
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 480px) {
   main .container .list {
     min-height: 60%;
   }
@@ -168,7 +180,7 @@ main .container .list ul li {
   letter-spacing: 1px;
 }
 
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 480px) {
   main .container .list ul li {
     font-size: 16px;
     padding: 10px 0;
@@ -223,7 +235,7 @@ main .container nav.misa {
   color: #777a92;
 }
 
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 480px) {
   main .container nav.misa {
     display: flex;
     flex-direction: row;
@@ -242,13 +254,19 @@ main .container nav.misa ul {
   flex: 0 0 50%;
 }
 
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 820px) {
   main .container nav.misa ul {
     position: fixed;
     bottom: 40px;
     background-color: #25273c;
-    width: 80%;
+    width: 55%;
     padding: 20px 10px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  main .container nav.misa ul {
+    width: 80%;
   }
 }
 
@@ -280,7 +298,7 @@ main .container nav.misa h5:hover {
   color: #e4e5f1;
 }
 
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 480px) {
   main .container nav.misa h5 {
     font-size: 12px;
     margin: 0 10px;
@@ -313,7 +331,7 @@ main .container .light-theme nav h5:hover {
   background-color: #cacde8;
 }
 
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 480px) {
   .main-light {
     background-image: url(/images/bg-mobile-light.jpg);
   }
